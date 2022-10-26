@@ -119,6 +119,13 @@ TEST(AnyAddress, Data) {
         auto pubkey = WRAPD(TWAnyAddressData(addr.get()));
         assertHexEqual(pubkey, "e0b3fcccfe0283cc0f8c105c68b5690aab8c5c1692a868e55eaca836c8779085");
     }
+    // westend
+    {
+        auto string = STRING("5H7eeJj6LTTXMfZ4UPBAfeEJ2ppp3faV97B3LfhoqqkrVYPS");
+        auto addr = WRAP(TWAnyAddress, TWAnyAddressCreateWithString(string.get(), TWCoinTypeWestend));
+        auto pubkey = WRAPD(TWAnyAddressData(addr.get()));
+        assertHexEqual(pubkey, "df6c164a6a931b55af0897e10627775bb6e97b20941f758f890cdbb060f044f7");
+    }
     // polkadot
     {
         auto string = STRING("16fir1SPRAaWGtF4ZkKNDq3S6LnD9mbphGXqL923DoH85Exz");
